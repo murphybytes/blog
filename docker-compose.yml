@@ -1,0 +1,19 @@
+version: '2'
+services:
+  mysql:
+    image: mysql:5.7
+    volumes:
+      - .:/tmp
+    command: mysqld --datadir=/tmp/mysqldata --slow_query_log=1 --log_output=TABLE --log-queries-not-using-indexes
+    environment:
+      MYSQL_ROOT_PASSWORD: toor
+      MYSQL_DATABASE: blog
+      MYSQL_USER: blog
+      MYSQL_PASSWORD: blog
+    ports:
+      - "3306:3306"
+  mailhog:
+    image: mailhog/mailhog:latest
+    ports:
+      - "8025:8025"
+      - "1025:1025"
