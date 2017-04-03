@@ -15,6 +15,10 @@ func New(dsn string) (journal.Database, error) {
 	if err != nil {
 		return nil, err
 	}
+	err = db.Ping()
+	if err != nil {
+		return nil, err
+	}
 	ds := &database{
 		db: db,
 	}
