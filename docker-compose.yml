@@ -7,9 +7,9 @@ services:
     command: mysqld --datadir=/tmp/mysqldata --slow_query_log=1 --log_output=TABLE --log-queries-not-using-indexes
     environment:
       MYSQL_ROOT_PASSWORD: toor
-      MYSQL_DATABASE: blog
-      MYSQL_USER: blog
-      MYSQL_PASSWORD: blog
+      MYSQL_DATABASE: journal
+      MYSQL_USER: journal
+      MYSQL_PASSWORD: journal 
     ports:
       - "3306:3306"
   mailhog:
